@@ -1,8 +1,15 @@
-steps:
-- name: gcr.io/cloud-builders/docker
-  args: ['build', '-t', 'gcr.io/$PROJECT_ID/zip', '.']
+- name: gcr.io/$PROJECT_ID/zip
+  args: ['-r9T', 'utils-$BUILD_ID.zip', 'package/utils']  
 
-images: ['gcr.io/$PROJECT_ID/zip']
+
+
+
+
+# steps:
+# - name: gcr.io/cloud-builders/docker
+#   args: ['build', '-t', 'gcr.io/$PROJECT_ID/zip', '.']
+
+# images: ['gcr.io/$PROJECT_ID/zip']
 # steps:
 # - name: ubuntu
 #   entrypoint: bash
@@ -43,3 +50,15 @@ images: ['gcr.io/$PROJECT_ID/zip']
 #       # Read from "/workspace"
 #       echo "First we saved " $(cat /workspace/first.txt) &&
 #       echo "Then we saved " $(cat /workspace/second.txt)
+
+
+# --------------------------
+# Step:1
+# initially u shd build zip image, since we are not able to zip files,
+# So we created custom image and pushed to container registry
+# steps:
+# - name: gcr.io/cloud-builders/docker
+#   args: ['build', '-t', 'gcr.io/$PROJECT_ID/zip', '.']
+
+# images: ['gcr.io/$PROJECT_ID/zip']
+# ----------------
