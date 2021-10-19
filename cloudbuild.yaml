@@ -1,6 +1,6 @@
 steps:
 - name: 'ubuntu'
-  args: ['echo' 'helloworld']
+  args: ['echo', 'helloworld']
 # ["zip" "-r" "myfiles.zip" "package/utils"]
 # artifacts:
 #   objects:
