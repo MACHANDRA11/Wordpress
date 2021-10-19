@@ -1,7 +1,7 @@
 steps:
 - name: 'ubuntu'
   args: zip -r myfiles.zip package/utils
-artifacts:
-  objects:
-    location: 'gs://develop-test-tf/'
-    paths: ['myfiles.zip']
+# artifacts:
+#   objects:
+#     location: 'gs://develop-test-tf/'
+#     paths: ['myfiles.zip']
