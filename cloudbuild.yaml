@@ -1,6 +1,12 @@
 steps:
 - name: gcr.io/$PROJECT_ID/zip
-  args: ['-r', 'utils-$BUILD_ID.zip', 'package/utils']  
+  args: ['-r', 'utils-$BUILD_ID.zip', 'package/utils']
+artifacts:
+  objects:
+    location: 'gs://develop-test-tf/'
+    paths: ['myfiles.zip']
+
+
 # steps:
 # - name: gcr.io/cloud-builders/docker
 #   args: ['build', '-t', 'gcr.io/$PROJECT_ID/zip', '.']
