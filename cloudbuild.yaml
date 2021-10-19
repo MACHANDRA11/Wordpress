@@ -1,7 +1,7 @@
 steps:
 - name: 'ubuntu'
-  args: ['echo', 'helloworld']
-# ["zip" "-r" "myfiles.zip" "package/utils"]
+  args: ["zip", "-r", "myfiles.zip", "package/utils"]
+# ["zip", "-r", "myfiles.zip", "package/utils"]
 # artifacts:
 #   objects:
 #     location: 'gs://develop-test-tf/'
