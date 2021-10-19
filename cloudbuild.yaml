@@ -1,13 +1,18 @@
 steps:
-- name: ubuntu
-  entrypoint: bash
-  args: 
-   - -c 
-   - |
-     # Installing zip executable
-     apt install zip &&
-     zip -r myfiles.zip package/utils &&
-     ls -l /workspace/*
+- name: gcr.io/cloud-builders/docker
+  args: ['build', '-t', 'gcr.io/$PROJECT_ID/zip', '.']
+
+images: ['gcr.io/$PROJECT_ID/zip']
+# steps:
+# - name: ubuntu
+#   entrypoint: bash
+#   args: 
+#    - -c 
+#    - |
+#      # Installing zip executable
+#      apt install zip &&
+#      zip -r myfiles.zip package/utils &&
+#      ls -l /workspace/*
 
 # ["zip", "-r", "myfiles.zip", "package/utils"]
 # artifacts:
